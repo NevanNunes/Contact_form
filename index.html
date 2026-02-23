@@ -9,75 +9,71 @@
 </head>
 
 <body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">ContactApp</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
     <div class="container">
-        <!-- Header Section -->
-        <header class="header">
+
+        <!-- Page Title -->
+        <div class="page-title">
             <h1>Contact Manager</h1>
-            <p>Manage your contacts easily</p>
-        </header>
+            <p>Add, edit, and search your contacts easily.</p>
+        </div>
 
         <!-- Search Bar -->
-        <div class="search-box">
+        <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Search by name or email...">
         </div>
 
-        <!-- Contact Form -->
-        <div class="form-card">
+        <!-- Add Contact Form -->
+        <div class="card">
             <h2 id="formTitle">Add New Contact</h2>
-
             <form id="contactForm">
                 <div class="form-group">
-                    <label for="nameInput">Name:</label>
+                    <label for="nameInput">Name</label>
                     <input type="text" id="nameInput" placeholder="Enter full name" required>
-                    <span class="error" id="nameError"></span>
                 </div>
-
                 <div class="form-group">
-                    <label for="emailInput">Email:</label>
+                    <label for="emailInput">Email</label>
                     <input type="email" id="emailInput" placeholder="example@email.com" required>
-                    <span class="error" id="emailError"></span>
                 </div>
-
                 <div class="form-group">
-                    <label for="phoneInput">Phone Number:</label>
+                    <label for="phoneInput">Phone</label>
                     <input type="tel" id="phoneInput" placeholder="1234567890" required>
-                    <span class="error" id="phoneError"></span>
                 </div>
-
-                <div class="button-group">
-                    <button type="submit" class="btn btn-primary" id="submitBtn">
-                        Add Contact
-                    </button>
-                    <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">
-                        Cancel
-                    </button>
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="btn-green">Add Contact</button>
+                    <button type="button" id="cancelBtn" class="btn-outline" style="display:none;">Cancel</button>
                 </div>
             </form>
         </div>
 
-        <!-- Contacts List Section -->
-        <div class="contacts-section">
-            <div class="section-header">
+        <!-- Contacts List (below the form) -->
+        <div class="card" style="margin-top: 20px;">
+            <div class="list-header">
                 <h2>Your Contacts (<span id="contactCount">0</span>)</h2>
-                <button id="clearAllBtn" class="btn btn-danger" style="display: none;">
-                    Clear All
-                </button>
+                <button id="clearAllBtn" class="btn-danger" style="display:none;">Clear All</button>
             </div>
 
-            <!-- Empty State Message -->
-            <div id="emptyState" class="empty-state">
-                <p>No contacts yet. Add your first contact above!</p>
-            </div>
-
-            <!-- Contacts List -->
             <div id="contactsList"></div>
+
+            <div id="emptyState" class="empty-state">
+                <p>No contacts yet. Add one using the form.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Notification Toast -->
-    <div id="toast" class="toast">
-        <span id="toastMessage"></span>
-    </div>
+    <!-- Footer -->
+
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
 
     <script src="script.js"></script>
 </body>
